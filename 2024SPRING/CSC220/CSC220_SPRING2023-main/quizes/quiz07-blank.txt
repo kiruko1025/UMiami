@@ -1,0 +1,118 @@
+0. Add 7 to the following binary search tree
+
+               4
+       1               5
+           3               8
+         2               6   9
+
+
+
+
+
+
+1.  Starting with the same tree (before inserting 7), show the two ways to remove 4.
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. Show the steps involved in adding (offering) 4 to the following *heap* (not BST).
+
+         1
+    6         5
+  9   9     7   8
+
+
+
+
+
+3. Returning to the initial heap in the previous problem, show the steps involved in
+   removing 1.
+
+         1
+    6         5
+  9   9     7   8
+
+
+
+
+
+
+4. The array theElements[] and int size represent a COMPLETE binary tree.  If
+   theElements[i] is an element in the tree with i>0, where is its parent?
+
+
+
+
+
+
+5. Same situation for theElements[], size, and theElements[i].  What test tells you
+   that theElements[i] has a left child?
+
+
+
+
+
+
+
+6,7. Finish implementing a recursive method to add a new Entry to a BST.
+
+  private Entry add (K key, V value, Entry root) {
+    if (root == null)
+
+      return 
+
+    if (key.compareTo(root.key) < 0)
+
+
+
+    else
+
+
+
+    return 
+
+  }
+
+
+8. Node node is a pointer to a Node in a linked list with a next pointer.  Implement
+   a method which determines the number of nodes which come after node in the list.
+   (The last Node is called start because this is part of the solver for the snow to
+   rain game.)
+
+        int startDistance (Node node) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9. The NodeComparator class has a priority method that returns the sum of distance
+   to start plus number of letters different from target.  Implement a compare
+   method for ordering by increasing priority.  (Hint: think about compareTo for
+   String.)
+
+        String target;
+        int priority (Node node) { 
+          return startDistance(node) + lettersDifferent(node.word, target);
+        }
+
+        public int compare (Node a, Node b) {
+

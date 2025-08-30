@@ -1,0 +1,119 @@
+0. When the Jumble solver reads the word "computer" from the dictionary, what key
+   and value does it store it in its Map?
+
+
+	KEY = 
+
+
+
+	VALUE = 
+
+
+
+1. When the Jumble solver is asked to unscramble "ewting", what key does it look up
+   in the Map?
+
+
+
+
+
+
+2. Suppose the Jumble solver uses SortedPD (via PDMap) for its Map, and the
+   dictionary has n words.  What is the O() to store one new word into the Map?
+   What is the O() to store all the words in the file into the Map?
+
+
+
+
+
+
+
+
+3. If the solver in #2 takes 1 MILLIsecond (1/1000 sec.) to read in a dictionary of
+   size 1000, how many SECONDS will take to read in a dictionary of size 1,000,000?
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4. What is the O() for adding a new entry at a KNOWN location in a linked list?
+   (You are given a pointer to the next or previous entry.)  Does that make
+   LinkedMap.put faster than SortedPD.addOrChangeEntry?  Why or why not?
+
+
+
+
+
+
+
+
+
+
+
+
+5. Implement find(key) that returns the earliest entry with key that is >= the key
+   we are looking for.
+
+  protected Entry find (K key) {
+
+    for (Entry entry =           ; entry !=         ; entry =                   )
+
+       if (                                                   )
+
+         return entry;
+
+    return null;
+  }    
+
+
+6. Write code to add newEntry as the new first element of a NONEMPTY doubly linked
+   list of Entry (with first and last pointers).
+
+
+
+
+
+
+
+
+
+
+7. Write code to add newEntry right before nextEntry in the MIDDLE of a doubly
+   linked list.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8. If put(key,value) for a SkipMap takes O(log n), what is the O() for Jumble to
+   read in n words if it uses SkipMap?
+
+
+
+
+
+9. If it takes 3 milliseconds to read in 1000 words, how many seconds will Jumble
+   using SkipMap take to read in 1,000,000 words?
+

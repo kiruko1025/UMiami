@@ -1,0 +1,187 @@
+1. If you do not have a "OneDrive - University of Miami" folder on
+   your computer, install OneDrive.  Go to
+
+	onedrive.miami.edu
+
+   Login using your CaneLink (UM email) credentials.
+
+   Click on the dots on the upper left.
+
+   Install the OneDrive app, run, and setup your OneDrive folder.
+
+   Create a folder inside the OneDrive - University of Miami" folder
+   with the same name as your UM email.  For example, mine and Collin's
+   vjm@miami.edu and cdc104@miami.edu.
+
+
+2. On the onedrive.miami.edu website, that folder should appear under
+   "My Files".  (You might have to reload.)
+
+   Click on the word "private" in the Sharing column.
+
+   Click on the + 
+
+   Give access to me and Collin using our email addresses above or by
+   typing in our names.
+
+
+3. If you don't already have it from CSC120, download and install
+   IntelliJ IDEA Community Edition:
+
+https://www.jetbrains.com/edu-products/download/#section=idea
+
+   You might also have to download and install Java:
+
+https://www.oracle.com/java/technologies/downloads/
+
+
+4. In IntelliJ, create a new Java project.  You can name it whatever
+   you want, but I suggest "csc220" or "csc220-2241".
+
+   Accept its offer to create a "sample program".
+
+   Run Main and make sure it says "Hello world!".
+
+
+5. Quit IntelliJ.  Open two File Explorer or Finder windows, one
+   visiting
+
+     IdeaProjects/csc220
+
+   and the other visiting
+
+     OneDrive - University of Miami/[your email]
+
+   meaning the folder you created in step 1.
+
+   Drag src from the first folder to the second folder.
+
+   When you go to onedrive.miami.edu on the web and click into your
+   "email" folder, you should just see src.  If you see something
+   else, like your CSC220 project folder, move it back and just move
+   the src folder.
+
+
+6. That was easy, right?  Here is the tricky part!
+
+   Create a SYMBOLIC LINK to the src folder from the project folder.
+
+   On a PC
+
+       Click start, type "command prompt" in the run window, and hit return.
+       Enter
+
+          mklink /d 
+
+       Type space.
+       Copy and paste the path from the first Explorer window.
+       Add \src then space.
+       Copy and paste the path from the second Explorer window.
+       Add \src if it is not there.
+
+       It should look something like the following (you may have to add the "").
+
+mklink /d c:\Users\Victor\IdeaProjects\csc220\src c:\Users\Victor\"OneDrive - University of Miami"\vjm@miami.edu\src
+
+       Only with your information instead of mine.
+       Hit return.
+       You may have to "run the command prompt as administrator".
+       Google how to do this.
+
+   On a Mac
+
+       spotlight (cmnd-space or click the magnifying glass).
+       Search for "terminal" and hit return.
+       Enter
+
+          ln -s 
+       
+       Type space.
+       Highlight src in your "email folder" (the one you just dragged).
+       Hit command-I (command is next to the space-bar).
+       Copy (command-C) everything to the right of "Where:"
+       (Highlight it by drag or triple-click.)
+       Paste in the terminal next to ln -s
+       Add /src
+       Type space.
+       Highlight out in your prject folder.
+       Copy and paste its "Where:" into the terminal.
+       It should look something like this.
+
+ln -s /Users/vjm/Library/CloudStorage/OneDrive-UniversityofMiami/vjm@miami.edu/src /Users/vjm/IdeaProjects/csc220-2241
+
+       Only with your information instead of mine.
+       Hit return.
+       
+
+7. Restart IntelliJ.  Your src and prog01 folder should still appear.
+   You may have to right-click on csc220 and select "Reload from Disk".
+   Click OK if you get a popup that says:
+
+“IntelliJ IDEA CE” wants to access files managed by “OneDrive - University of Miami”.
+
+   Add another line to main in to print out "hello again".  Run it.
+   Go to onedrive.miami.edu and verify that the line appears in Hello.java.
+
+
+8. Rightclick on src to create a new package (New->Package) and name
+   it prog01.  That name DOES matter.  Not Prog01, not Proj01, not
+   prog1.  It must be all lower case with no space and a 0 before the 1.
+
+   Create java files in this package
+   In your browser
+	visit the source directory (on the discussion board)
+	cs.miami.edu/home/vjm/csc220/prog01
+        visit Main.java
+        save into "OneDrive - University of Miami"/csc220/src/prog01
+        do the same for Computer.java and Laptop.java
+   In IntelliJ
+	right-click on csc220 and select "Reload from Disk"
+
+
+9. Fix compiler errors and run
+	open prog01
+        double-click on Main.java
+        comment out offending lines
+        press the green triangle to run
+	Go to line with runtime error by double clicking on it
+	something like (Main.java:21)
+        comment out line with run time error and try again
+
+
+10. Debugging
+	set a breakpoint on the first line "Set a breakpoint here..."
+	(right click to the left of line and select Toggle Breakpoint)
+        run the debugger (a choice when you run it)
+        single step through the program using step over (bent arrow)
+	use step-into (downward arrow)
+        if you get a blank screen too many times, use (upward arrow)
+        if you are not calling methods in the package, use step-over
+        notice how you can see the value of variables
+        notice how you can see where you called from
+	try changing the value of a variable, like procSpeed in Computer
+	to access object variables, expand "this"
+        try setting breakpoints in methods
+
+
+11. Object Oriented Programming
+	notice that c2 is an instance of a Laptop
+	even though the variable is of type Computer
+
+Even if we call your laptop a computer, it's still a laptop.
+For example, I say:  ``Please install IntelliJ on your computer.''
+That might refer to your laptop or a desktop.
+
+        notice that when you print out c2,
+        it calls the Laptop toString method
+	you can set a breakpoint in that toString method
+
+
+12. Overriding a method
+	uncomment the computePower method in Laptop.java
+	fix the first compiler error by using getRamSize()
+	fix the second error by changing processorSpeed
+	from private to protected in Computer.java
+        **notice that c2.computePower() now calls this method**
+
+

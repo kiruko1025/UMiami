@@ -1,0 +1,124 @@
+0. A disk block is 512 (2^9) bytes.  How many blocks are there on an 8T
+   (8 * 2^40 bytes) disk drive?  Give both a power of 2 and an approximate base-10
+   value.  Can you use a 32-bit int index to address those blocks?
+
+
+
+
+
+
+
+
+
+
+
+1. Each web page URL and each word (dictionary words, names, etc.) has an InfoFile
+   with a List of indices of web page information files.  Which indices does the
+   InfoFile for a web page store?  Which indices does the InfoFile for a word store?
+   
+   
+
+
+
+
+
+
+
+
+
+
+2. If reading in a B+ Tree node from disk takes 1ms and we use a B+ Tree with branching
+   factor 1024 to implement the map from URL to index, how many milliseconds does it
+   take to lookup the index of a web page?  Assume there are 100 billion web pages.
+
+
+
+
+
+
+
+
+
+
+3. It takes 1000 times as long in RAM to add an entry to a B+ Tree node with 1024
+   entries compared to a B+ Tree node with only 2 (or 3) entries.  Why does it still
+   make sense to use a branching factor of 1024 for an external B+ Tree?
+
+
+
+
+
+
+
+
+
+
+4. Which is closer to www.miami.edu/index.html alphabetically:
+   www.cs.miami.edu/index.html or www.google.com/index.html?
+   How do we fix this issue?
+
+
+
+
+
+
+
+5. Given the home page URL for a website, what interface and algorithm should we use
+   to find all the web pages on that website?
+
+
+
+
+
+
+
+
+
+
+6. While running this algorithm, how can we make looking up the index of a URL
+   faster (usually) than your answer to #2?
+
+
+
+
+
+
+
+
+
+
+
+7. What is the best data structure to implement the map from a word to its index and
+   why?
+
+
+
+
+
+
+
+
+
+
+
+8. Set<String> urlsOnPage is the set of URLs seen so far on a web page.  How can you
+   initialize it?  What two lines should you have before you use the "external B+ Tree"
+   to get the index of each URL?
+
+	List<String> urls = browser.getURLs();
+
+	Set<String> urlsOnPage =                                 ; // initialize
+
+	for (String url : urls) {
+
+	    if (                                               ) { // url is not in set
+
+	                                                         ; // add to set
+
+		String indexOfURL = indexOfURL.get(url); // lookup in "B+ Tree"
+
+
+
+9. We are supposed to add the index of the current page indexOfPage to the list of
+   indices in the file for for each word on the page.  How can avoid adding it more
+   than once if a word appears more than once on the page?

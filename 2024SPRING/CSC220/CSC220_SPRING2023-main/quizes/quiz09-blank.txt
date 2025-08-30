@@ -1,0 +1,130 @@
+0. Write a recursive method to remove the leftmost node from a binary tree and
+   return the root of the resulting tree.  It has two cases: the left subtree is
+   empty or not.  You can assume the tree is not empty.
+
+    Node removeMinimum (Node root) {
+	if (root.left == null)
+
+
+
+
+
+
+
+
+
+
+1. What is the O() of for inserting n items into an (initially empty) binary
+   search tree in the worst case?  Is there an input that will always make the
+   worst case happen?
+
+
+
+
+
+
+
+
+2. What is the maximum number of levels for a 2-3 tree (B+ Tree) with n leaf
+   entries?  What is the minimum number of levels?  Your answers should be
+   correct plus or minus 1.  Do not use not O().
+
+
+
+
+
+
+
+3. When adding a new entry to a 2-3 tree, what is the maximum number of comparisons
+   and splits you have to do on each level?  Two answers (comparisons and splits).
+
+
+
+
+
+
+
+
+4. ArrayMap.find(key) returns the least index of the entry with entry.key "<=" key
+   or size if there is no such entry.  ArrayMap.found(index,key) returns true if it
+   finds an entry with that key at index.
+
+   FileMap.findFile(key) returns the index of the file which might contain key or -1
+   if there is definitely no such file. (Hint:  come back after question 5.)
+
+  int findFile (K key) {
+    int index = find(key);
+    if (found(index, key))
+    
+       return                                            ; // easy
+
+    else
+
+       return                                            ; // harder
+  }
+
+Questions 5-8 all refer back to the following 2-3 B+ Tree, INDEPENDENT of any other
+question.  I left out the file names (0.txt, etc.).  Question 9 uses 8(a).
+
+                     7(a)                 7(b)                7(c)
+Alex
+  Alex
+  17
+  Brad
+  46
+Ivy
+  Ivy
+  10
+  Kyle
+  6
+Lisa
+  Lisa
+  43
+  Lynne
+  43
+  Victor
+  46
+
+
+
+
+
+
+                 8(a)            8(b)            9(a)              9(b)
+Alex
+  Alex
+  17
+  Brad
+  46
+Ivy
+  Ivy
+  10
+  Kyle
+  6
+Lisa
+  Lisa
+  43
+  Lynne
+  43
+  Victor
+  46
+
+
+
+5. While you are adding Zoe, under which index would she go in TOP (leftmost) list?
+
+
+6. At what index would Zoe go in the appropriate list in the lower (rightmost) level
+   (before splitting)?  (Don't forget to use zero-based indexing for #5 and #6.)
+
+
+7. Add Reid with number 27 to the tree.  Show the result after the addition (a), the
+   first split (b), and the second split (c).
+
+
+8. Show how to remove Kyle (a) using a merge (of the remaining file) with the left
+   (upper) neighbor (b).
+
+
+9. Show how to remove Kyle by using a merge (a) with the right (lower) neighbor.
+   What else do you have to do (b)?

@@ -1,0 +1,126 @@
+0,1. LinkedQueue<E> uses a linked list with the following Node class.  It has Node
+   variables top and bottom and int variable size.  Finish implementing offer.
+
+	class Node {
+		E element;
+		Node next;
+		Node (E element) { this.element = element; this.next = null; }
+	}
+
+  	boolean offer (E element) {
+		size++;
+		Node newNode = new Node(element);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. If node is initialized to top in LinkedQueue Iter (implements Iterator), what
+   value does next() return?  What new value does it give to node?  For what value
+   of node does hasNext() return false?  (Three answers.)
+
+
+
+
+
+
+
+
+3,4. ArrayQueue<E> uses an E[] array theElements, treated as a "ring buffer",  and
+   int variables first and size.  Implement ArrayQueue<E> poll.  Don't forget
+   the empty case.
+
+	E poll () {
+
+
+
+
+
+
+
+
+
+
+
+
+5. If count in ArrayQueue Iter (implements Iterator) is the number of elements
+   next() has returned so far, what value does next() return?  What new value does
+   it give to count?  For what value of count does hasNext() return false?
+
+
+
+
+   
+
+
+6. Suppose ArrayQueue<String> has a (ring buffer) array theElements of length 5
+   with the following contents:
+
+	null, "had", "a", "little", "lamb"
+
+   Suppose first==1 and size==4.  (Zero based indexing!!!)
+
+   After offer("fleece"), what are the contents of the array and the values of
+   first and size?  Would your answer be different if the null had been "Mary"?
+
+
+
+
+
+
+
+
+
+
+7. Continuing from #6 (disregarding my question about "Mary"), after offer("white),
+   what are the contents of theElements and the values of first and size?
+
+
+
+
+
+
+
+
+8. Write a method that takes a queue as input and returns a String that is the
+   contents of the queue separated by spaces.  There can be an extra space at the end.
+
+	String queueToString (Queue<String> queue) {
+		String s = "";
+
+
+
+
+
+
+
+
+
+
+                return s;
+	}
+
+
+9. The methods of AbstractQueue<E> work by calling the methods that YOU WROTE
+   yesterday.  How can AbstractQueue<E> implement remove() by calling the poll() and
+   size() you implemented?  Remember, remove() should throw NoSuchElementException
+   if there is no element to remove.
+
+	E remove () {
+
+
+
+
+
+
+

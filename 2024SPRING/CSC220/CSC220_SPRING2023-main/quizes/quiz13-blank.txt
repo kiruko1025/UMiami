@@ -1,0 +1,116 @@
+0. A Vote has .index (page index) and .priority (value of vote).  voteIter is an
+   iterator over a list of votes ordered by increasing page index (or impact for
+   equal index).  Add the impact of each vote to file.impact for the InfoFile
+   with index vote.index.
+
+        // first vote or null if none	
+	Vote vote = voteIter.hasNext() ? voteIter.next() : null;
+	for (Map.Entry<Long,InfoFile> entry : pageDisk.entrySet()) {
+	    long index = entry.getKey();
+	    InfoFile file = entry.getValue();
+
+
+
+
+
+
+
+
+
+1. If a page has no outgoing links, what should we do with its impact?  What
+   happens to all the impacts if you don't do this?
+
+
+
+
+
+
+
+2. Why it is important for SEARCH that NotGPT uses a queue instead of a stack in the
+   COLLECT method?
+
+
+
+
+
+
+
+3. The first column shows the last page id read from each of three lists and the
+   rest shows the unread portion of those lists.  Show the result of reading what
+   you should read next (to avoid skipping over matches).
+
+   a.		222   333 444 555 666 777
+		444   666 1234
+		444   555 600 666 678 880 888
+
+
+
+
+
+
+
+
+
+   b.		555   666 777
+		666   1234
+		550   600 666 678 880 888
+
+
+
+
+
+
+
+
+
+4. Suppose "Milenkovic" appears on a million pages and "Java" appears on a billion
+   pages.  What is the MAXIMUM number of comparisons it could take to find all pages
+   with "Milenkovic" and "Java" using the merge-like algorithm (from #3)?  Answer is
+   a number, not an O().
+
+
+
+
+
+
+5. About how many comparisons would it take to find all matches if you COULD use
+   binary search to look for each Milenkovic page in the list of Java pages?  Again,
+   answer as a number, not an O().
+
+
+
+
+
+
+6. In order to find the top m=100 pages out of a n=1000000 matches, you use a
+   priority queue.  Why not just sort the million matches (in order of increasing
+   priority) and take the last 100?
+
+
+
+
+
+
+
+7,8,9. Suppose you are given a copy of the UM directory as an interface List<Entry>
+   implemented as ArrayList<Entry>, where Entry has .firstName among other
+   information.  There are N=40000 entries and n=5000 different first names.  How can
+   you find the m=100 most popular first names?  What interfaces would you use?
+   Implementations?  Methods?  Running times (in terms of N, n, m)?  Total time?
+   Sketch out the algorithm.
+
+     INTERFACES:
+
+
+IMPLEMENTATIONS:
+
+
+        METHODS:
+
+
+       RUNTIMES:
+
+
+     TOTAL TIME:
+
+SKETCH:

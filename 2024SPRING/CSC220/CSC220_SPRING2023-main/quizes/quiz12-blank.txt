@@ -1,0 +1,123 @@
+0. In a hash table, the linked list at table[index] contains the Entry with key
+   theKey, but it is not the first Entry in the list.  Write code to remove it from
+   the list.  Entry has .key and .next but not .previous.
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. theEntry is an Entry in the list at table[theIndex].  Write code to set theEntry
+   to the next Entry in the hash table and theIndex to the index of the list that
+   contains it.  If there is no such Entry, it should set theIndex to table.length.
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. Why it is important for NotGPT to use a queue instead of a stack in the COLLECT
+   method?  Hint:  think about the B+ tree.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3. Pages 0 to 3 have the following impacts and links.  What is the list of votes
+   of the form (pageID, impact)?  (Start your answer right HERE so you have room.)
+
+page 0 has impact  1   and links to pages 1 2 3
+page 1 has impact  1/3 and links to pages 2 3
+page 2 has impact  5/6 and links to pages 3
+page 3 has impact 11/6 and links to pages 0
+
+
+
+
+
+
+
+
+
+
+4. If reading and writing an single page file takes 2ms, how long does it take to cast
+   8 billion votes?  If a million seconds is about 10 days, how long is that in days?
+
+
+
+
+
+
+
+
+
+
+5. If reading or writing a file with 4 billion votes takes 5 minutes, how long does
+   it take to sort 8 billion votes using external MergeSort?
+
+
+
+
+
+
+
+
+
+
+6,7. Suppose I gave you a file containting the UM directory and asked you to record
+   the number of people who have each first name: how many "Aaron"s, "Julie"s,
+   "Tracy"s, etc.  Then I ask you how many "Victor"s there are.  What interface
+   would you use?  Which implementation?  Which methods?  What are their O() running
+   times assuming m entries and n different names?  What is the total O() running
+   time?  The time to look up "Victor" (or any other name)?
+
+INTERFACE:				IMPLEMENTATION:
+
+METHODS:
+
+RUNTIMES:
+
+SETUP TIME:
+
+LOOKUP TIME:
+
+
+
+
+
+8,9. In addition, I want to be able to pick a first name at random every day with each
+   first name equally likely: "The name of the day is Lucina!"  Use a random index i
+   from 0 to n-1: i=random.nextInt(n), where random=new Random().  Same questions.
+
+INTERFACE:				IMPLEMENTATION:
+
+METHODS:
+
+RUNTIMES:
+
+SETUP TIME:
+
+TIME TO GENERATE A RANDOM NAME:  
